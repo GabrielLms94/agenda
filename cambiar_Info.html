@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            background: #70c5c0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            margin-top: 33%;
+        }
+
+        input{
+            margin: 0.5rem;
+        }
+
+        a{
+            width: auto;
+            height: 50px;
+        }
+        button{
+            height: 50px;
+        }
+    </style>
+
+    <title>Cambiar</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row justify-content-center ">
+        <form id="form">
+            <div class="col-md-3">
+                <input type="text" value="" name="lugar" placeholder="Lugar" id="inputLugar">
+            </div>
+            <div class="col-md-3">
+                <input type="text" value="" name="descripcion" placeholder="Descripcion" id="inputDescripcion">
+            </div>
+            <div class="col-md-3">
+                <input type="date" name="fecha" id="fecha">
+            </div>
+
+                <input type="hidden" value="" name="id_fecha" id="id_fecha">
+
+                <div class="row justify-content-center mt-4">
+                    <a href="./agenda.html" class="btn btn-danger">Cancelar</a>
+                    <input class="btn btn-success" type="submit" value="Guardar">
+                </div>
+
+
+        </form>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="actualizar.js"></script>
+</body>
+</html>

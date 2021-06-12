@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="calendario.css">
+    <link rel="stylesheet" href="css/all.min.css"/>
+</head>
+<body>
+
+<div class="container">
+    <div class="calendar">
+        <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+                <h1></h1>
+                <p></p>
+            </div>
+            <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+            <div>Dom</div>
+            <div>Lun</div>
+            <div>Mar</div>
+            <div>Mie</div>
+            <div>Ju</div>
+            <div>Vi</div>
+            <div>Sá</div>
+        </div>
+        <div class="days">
+
+        </div>
+    </div>
+
+
+    <div class="menu" id="menu">
+
+        <div class="menu-container">
+
+            <div class="date-menu">
+                <h2>jueves, 17 de junio de 2021</h2>
+            </div>
+
+            <div class="form">
+
+                <form id="form" >
+                    <div class="form-input"><input type="text" class="input" name="lugar" id="lugar" placeholder="Lugar"></div>
+                    <div class="form-input"><input type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripcion"></div>
+                    <input type="hidden" value="2022-09-10" name="fecha">
+                    <div class="form-input"><select name="hora" id="hora">
+                        <option value="09:00" >09:00</option>
+                        <option value="09:30" >09:30</option>
+                        <option value="10:00" >10:00</option>
+                        <option value="10:30" >10:30</option>
+                        <option value="11:00" >11:00</option>
+                        <option value="11:30" >11:30</option>
+                        <option value="12:00" >12:00</option>
+                        <option value="12:30" >12:30</option>
+                        <option value="13:00" >13:00</option>
+                        <option value="13:30" >13:30</option>
+                        <option value="14:00" >14:00</option>
+                        <option value="14:30" >14:30</option>
+                        <option value="15:00" >15:00</option>
+                        <option value="15:30" >15:30</option>
+                        <option value="16:00" >16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00" >17:00</option>
+                        <option value="17:30" >17:30</option>
+                        <option value="18:00" >18:00</option>
+                        <option value="18:30" >18:30</option>
+                        <option value="19:00" >19:00</option>
+                    </select></div>
+
+                    <div class="botons">
+                        <div class="btn"><input type="button" class="buton" id="cancel" onclick="cancelar()" value="Cancelar"></div>
+                        <div class="btn"><input type="submit" class="buton" id="accept" value="Agregar"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="calendario.js"></script>
+</body>
+</html>
