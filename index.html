@@ -1,90 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Calendario</title>
-    <link rel="stylesheet" href="calendario.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/all.min.css"/>
+    <link rel="stylesheet" href="agenda.css">
+    <link rel="stylesheet" href="calendario.css">
+    <style>
+
+
+    </style>
 </head>
+
 <body>
-
-<div class="container">
-    <div class="calendar">
-        <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date">
-                <h1></h1>
-                <p></p>
+<div class='dashboard'>
+    <div class="dashboard-nav">
+        <header><a href="#!" class="menu-toggle"><i class=""></i></a><a href="#" class="">
+            <i class=""></i> <span>Menú</span></a>
+        </header>
+        <nav class="dashboard-nav-list"><a href="#" class="dashboard-nav-item"><i class=" ">
+        </i> Pagina principal </a>
+            <a href="#" class="dashboard-nav-item active"><i class=" "></i> Activiades y Eventos </a>
+            <a href="#" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Historial </a>
+            <div class='dashboard-nav-dropdown'><a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
+                    class=""></i> Notificaciones </a>
             </div>
-            <i class="fas fa-angle-right next"></i>
-        </div>
-        <div class="weekdays">
-            <div>Dom</div>
-            <div>Lun</div>
-            <div>Mar</div>
-            <div>Mie</div>
-            <div>Ju</div>
-            <div>Vi</div>
-            <div>Sá</div>
-        </div>
-        <div class="days">
-
-        </div>
+            <div class='dashboard-nav-dropdown'><a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
+                    class=""></i> Entrega de reportes </a>
+            </div>
+            <div class='dashboard-nav-dropdown'><a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
+                    class="fas fa-money-check-alt"></i>Historial de reportes</a>
+            </div>
+            <a href="#" class="dashboard-nav-item"><i class=""></i> Perfil </a>
+            <div class="nav-item-divider"></div>
+            <a href="#" class="dashboard-nav-item"><i class=""></i> Cerrar sesion </a>
+        </nav>
     </div>
+    <div class='dashboard-app'>
+        <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class=" "></i></a></header>
 
 
-    <div class="menu" id="menu">
-
-        <div class="menu-container">
-
-            <div class="date-menu">
-                <h2>jueves, 17 de junio de 2021</h2>
-            </div>
-
-            <div class="form">
-
-                <form id="form" >
-                    <div class="form-input"><input type="text" class="input" name="lugar" id="lugar" placeholder="Lugar"></div>
-                    <div class="form-input"><input type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripcion"></div>
-                    <input type="hidden" value="2022-09-10" name="fecha">
-                    <div class="form-input"><select name="hora" id="hora">
-                        <option value="09:00" >09:00</option>
-                        <option value="09:30" >09:30</option>
-                        <option value="10:00" >10:00</option>
-                        <option value="10:30" >10:30</option>
-                        <option value="11:00" >11:00</option>
-                        <option value="11:30" >11:30</option>
-                        <option value="12:00" >12:00</option>
-                        <option value="12:30" >12:30</option>
-                        <option value="13:00" >13:00</option>
-                        <option value="13:30" >13:30</option>
-                        <option value="14:00" >14:00</option>
-                        <option value="14:30" >14:30</option>
-                        <option value="15:00" >15:00</option>
-                        <option value="15:30" >15:30</option>
-                        <option value="16:00" >16:00</option>
-                        <option value="16:30">16:30</option>
-                        <option value="17:00" >17:00</option>
-                        <option value="17:30" >17:30</option>
-                        <option value="18:00" >18:00</option>
-                        <option value="18:30" >18:30</option>
-                        <option value="19:00" >19:00</option>
-                    </select></div>
-
-                    <div class="botons">
-                        <div class="btn"><input type="button" class="buton" id="cancel" onclick="cancelar()" value="Cancelar"></div>
-                        <div class="btn"><input type="submit" class="buton" id="accept" value="Agregar"></div>
+        <div class="container2">
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="date">
+                        <h1></h1>
+                        <p></p>
                     </div>
-                </form>
+                    <i class="fas fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                    <div>Dom</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mie</div>
+                    <div>Ju</div>
+                    <div>Vi</div>
+                    <div>Sá</div>
+                </div>
+                <div class="days">
+
+                </div>
+            </div>
+
+
+            <div class="menu" id="menu">
+
+                <div class="menu-container">
+
+                    <div class="date-menu">
+                        <h2 id="menu-date"></h2>
+                    </div>
+
+                    <div class="form">
+
+                        <form id="form">
+                            <div class="form-input"><input type="text" class="input" name="lugar" id="lugar"
+                                                           placeholder="Lugar"></div>
+                            <div class="form-input"><input type="text" class="input" name="descripcion"
+                                                           id="descripcion" placeholder="Descripcion"></div>
+                            <input type="hidden" value="2022-09-10" name="fecha">
+                            <div><select class="form-control" name="hora" id="hora">
+                                <option value="09:00" selected style="font-size: 2.5rem">09:00</option>
+                                <option value="09:30" style="font-size: 2.5rem">09:30</option>
+                                <option value="10:00" style="font-size: 2.5rem">10:00</option>
+                                <option value="10:30" style="font-size: 2.5rem">10:30</option>
+                                <option value="11:00" style="font-size: 2.5rem">11:00</option>
+                                <option value="11:30" style="font-size: 2.5rem">11:30</option>
+                                <option value="12:00" style="font-size: 2.5rem">12:00</option>
+                                <option value="12:30" style="font-size: 2.5rem">12:30</option>
+                                <option value="13:00" style="font-size: 2.5rem">13:00</option>
+                                <option value="13:30" style="font-size: 2.5rem">13:30</option>
+                                <option value="14:00" style="font-size: 2.5rem">14:00</option>
+                                <option value="14:30" style="font-size: 2.5rem">14:30</option>
+                                <option value="15:00" style="font-size: 2.5rem">15:00</option>
+                                <option value="15:30" style="font-size: 2.5rem">15:30</option>
+                                <option value="16:00" style="font-size: 2.5rem">16:00</option>
+                                <option value="16:30" style="font-size: 2.5rem">16:30</option>
+                                <option value="17:00" style="font-size: 2.5rem">17:00</option>
+                                <option value="17:30" style="font-size: 2.5rem">17:30</option>
+                                <option value="18:00" style="font-size: 2.5rem">18:00</option>
+                                <option value="18:30" style="font-size: 2.5rem">18:30</option>
+                                <option value="19:00" style="font-size: 2.5rem">19:00</option>
+                            </select></div>
+
+                            <div class="botons">
+                                <div class="btn"><input type="button" class="buton" id="cancel" onclick="cancelar()"
+                                                        value="Cancelar"></div>
+                                <div class="btn"><input type="submit" class="buton" id="accept" value="Agregar">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
-    </div>
+        <div class="login-form">
+            <h2 class="text-center" id="historial"> Historial de Eventos y Actividades</h2>
+            <div class="row mb-4">
+                <input id="buscar" type="buscar" name="buscar" placeholder=" "
+                       class="form-control bg-white border-left-0 border-md">
+            </div>
 
+
+            <table class="table table-dark table-striped">
+                <thead>
+                <tr>
+                    <th scope="col" class="title-th">Fecha</th>
+                    <th scope="col" class="title-th">Hora</th>
+                    <th scope="col" class="title-th">Descripcion</th>
+                    <th scope="col" class="title-th">Lugar</th>
+                    <th scope="col" class="title-th">Modificar</th>
+                    <th scope="col" class="title-th">Eliminar</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="calendario.js"></script>
+
 </body>
 </html>
