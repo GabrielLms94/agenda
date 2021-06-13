@@ -78,6 +78,46 @@ const renderCalendar = () => {
 
     var form = document.getElementById('form');
     getRegisters()
+
+    document.getElementById('buscar').addEventListener('input',  (e) => {
+
+        var url = './controller/getFilter.php';
+
+        var datos = new FormData(form)
+
+        datos.append('datos', e.target.value )
+
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: datos, // data can be `string` or {object}!
+        }).then(res => res.json())
+            .then(response => {
+                let table = ''
+                for (let i in response) {
+                    table += `<tr>
+                            <td style="vertical-align:middle;" ><h3>${response[i].fecha}</h3></td>
+                            <td style="vertical-align:middle;" ><h3>${response[i].hora}</h3> </td>
+                            <td style="vertical-align:middle;" ><h3>${response[i].descripcion}</h3> </td>
+                            <td style="vertical-align:middle;" ><h3>${response[i].lugar}</h3> </td>
+                            <td>
+                            <br>
+                            <br>
+                            <a class="option-btn" href="./cambiar_Info.html?id=${response[i].id}"><h3>Modificar</h3></a>
+                            </td>
+                            <td style="vertical-align:middle;" >
+                            <form method="post" action="./controller/deleteSelected.php">
+                            <input type="hidden" value="${response[i].id}" name="id">
+                            <input class="delete-btn" type="submit" value="Eliminar">
+                            </form>
+                            </td>
+                          </tr>`
+                }
+                $('#tbody').html(table);
+
+            });
+
+    })
+
     form.addEventListener('submit', function (e) {
         e.preventDefault()
         getDate()
@@ -132,7 +172,10 @@ function x() {
         days[i].addEventListener('click', (e) => {
             daySelected = e.target.textContent
             selected = e.target;
-            // e.target.className = 'day selected'
+
+            var setDay_menu = date
+            setDay_menu.setDate(e.target.textContent)
+            document.getElementById('menu-date').innerHTML =  setDay_menu.toLocaleDateString(undefined, options)
             $('#menu').show('slow')
         })
     }
@@ -142,6 +185,7 @@ x()
 
 
 function cancelar() {
+    document.getElementById('menu-date').innerHTML = ''
     $('#menu').hide('slow')
 }
 
@@ -162,17 +206,19 @@ function getRegisters() {
             moment.locale('es')
             for (let i in response) {
                 table += `<tr>
-                            <td><h3>${response[i].fecha}</h3></td> 
-                            <td><h3>${response[i].hora}</h3> </td>
-                            <td><h3>${response[i].descripcion}</h3> </td>
-                            <td><h3>${response[i].lugar}</h3> </td>                 
+                            <td style="vertical-align:middle;" ><h3>${response[i].fecha}</h3></td> 
+                            <td style="vertical-align:middle;" ><h3>${response[i].hora}</h3> </td>
+                            <td style="vertical-align:middle;" ><h3>${response[i].descripcion}</h3> </td>
+                            <td style="vertical-align:middle;" ><h3>${response[i].lugar}</h3> </td>                 
                             <td>
-                            <a href="./cambiar_Info.html?id=${response[i].id}">Modificar</a>
+                            <br>
+                            <br>
+                            <a class="option-btn" href="./cambiar_Info.html?id=${response[i].id}"><h3>Modificar</h3></a>
                             </td>         
-                            <td>
+                            <td style="vertical-align:middle;" >
                             <form method="post" action="./controller/deleteSelected.php"> 
                             <input type="hidden" value="${response[i].id}" name="id">
-                            <input type="submit" value="Eliminar">
+                            <input class="delete-btn" type="submit" value="Eliminar">
                             </form>
                             </td>           
                           </tr>`
@@ -181,3 +227,6 @@ function getRegisters() {
 
         });
 }
+
+
+

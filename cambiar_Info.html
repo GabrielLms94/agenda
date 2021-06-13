@@ -40,7 +40,7 @@
 <div class="container">
 
     <div class="row justify-content-center ">
-        <form id="form">
+        <form id="form" method="post" action="./controller/updateCurrentSelected.php">
             <div class="col-md-3">
                 <input type="text" value="" name="lugar" placeholder="Lugar" id="inputLugar">
             </div>
@@ -48,14 +48,15 @@
                 <input type="text" value="" name="descripcion" placeholder="Descripcion" id="inputDescripcion">
             </div>
             <div class="col-md-3">
-                <input type="date" name="fecha" id="fecha">
+                <input type="date" id="fecha_f">
             </div>
 
                 <input type="hidden" value="" name="id_fecha" id="id_fecha">
+                <input type="hidden" value="" name="fecha" id="fecha">
 
                 <div class="row justify-content-center mt-4">
                     <a href="./agenda.html" class="btn btn-danger">Cancelar</a>
-                    <input class="btn btn-success" type="submit" value="Guardar">
+                    <input class="btn btn-success" id="submitbtn" type="submit" value="Guardar">
                 </div>
 
 

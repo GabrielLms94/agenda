@@ -45,7 +45,7 @@ function getDate() {
 
                 document.getElementById('inputLugar').value = response[i].lugar
                 document.getElementById('inputDescripcion').value = response[i].descripcion
-                document.getElementById('fecha').value = fechaArr[4] + '-' + 0 + index + '-' + fechaArr[0]
+                document.getElementById('fecha_f').value = fechaArr[4] + '-' + 0 + index + '-' + fechaArr[0]
                 document.getElementById('id_fecha').value = response[i].id
             }
 
@@ -58,29 +58,15 @@ document.getElementById('form').addEventListener('submit', (e) => {
     e.preventDefault();
 
     const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
-    var fecha_Html = document.getElementById('fecha').value
+    var fecha_Html = document.getElementById('fecha_f').value
     var fecha = new Date(fecha_Html)
     fecha.setDate(fecha.getDate() + 1)
-    var lugar = document.getElementById('inputLugar').value
-    var descripcion = document.getElementById('inputDescripcion').value
-    var id = document.getElementById('id_fecha').value
+    var sendFecha = document.getElementById('fecha')
 
-    var url = './controller/updateCurrentSelected.php';
+    sendFecha.value = fecha.toLocaleDateString(undefined, options)
 
-    let datos = new FormData()
-        datos.append("id_fecha",id)
-        datos.append("lugar",lugar)
-        datos.append("fecha",fecha)
-        datos.append("descripcion",descripcion)
+    // console.log(sendFecha.value)
 
-    console.log(datos.get("lugar"))
-
-    fetch(url, {
-        method: 'PUT', // or 'PUT'
-        body: datos, // data can be `string` or {object}!
-    }).then(res => res.json())
-        .then(response => console.log('Success:', response));
-
-
+    document.getElementById('form').submit()
 
 })

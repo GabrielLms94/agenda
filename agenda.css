@@ -49,33 +49,11 @@ body {
     position: relative;
     top: 1px;
 }
-.login-form .btn, .login-form .btn:active {
-    font-size: 16px;
-    font-weight: bold;
-    background: #453b8093 !important;
-    border: none;
-    margin-bottom: 20px;
+
+table, th, td {
+    border: 1px solid white;
 }
-.login-form .btn:hover, .login-form .btn:focus {
-    background: #453b8093 !important;
-}
-.login-form a {
-    color: rgb(255, 255, 255);
-    text-decoration: underline;
-}
-.login-form a:hover {
-    text-decoration: none;
-}
-.login-form form a {
-    color: #ffffff;
-    text-decoration: none;
-}
-.login-form form a:hover {
-    text-decoration: underline;
-}
-.login-form .bottom-action {
-    font-size: 14px;
-}
+
 :root {
     --font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
@@ -133,6 +111,24 @@ a {
 a:hover {
     color: #0458eb;
     text-decoration: underline;
+}
+
+.option-btn {
+    font: bold 11px Arial;
+    text-decoration: none;
+    color: white;
+}
+
+.delete-btn {
+    font: bold 16px Arial;
+    border: none;
+    color: white;
+    background: none;
+}
+
+.title-th{
+    text-align: center;
+    font: bold 16px Arial;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {

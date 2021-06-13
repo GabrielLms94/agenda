@@ -10,11 +10,10 @@ $descripcion =$_POST['descripcion'];
 $sql = "UPDATE agenda SET lugar='$lugar', descripcion='$descripcion', fecha='$fecha' WHERE id=$id";
 
 if ($con->query($sql) === TRUE) {
-//    header("Location: http://localhost/calendario/agenda.html");
-//    exit();
-    echo json_encode('Actualizado correctamente');
+    header("Location: http://localhost/calendario/agenda.html");
+    exit();
 } else {
-    echo json_encode("Error updating record: " . $con->error);
+    echo "Error updating record: " . $con->error;
 }
 
 $con->close();
